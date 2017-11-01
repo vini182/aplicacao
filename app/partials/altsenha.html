@@ -1,0 +1,96 @@
+<div class="breadcrumbs" id="breadcrumbs">
+    <ul class="breadcrumb">
+        <li>
+            <a href="#dashboard">Home</a>
+        </li>
+        <li class="active">Alterar Senha</li>
+        <li class="active">Usuário: {{name}}</li>
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row">
+        <div class="space-6"></div>
+        <div class="col-sm-6 col-sm-offset-1">
+            <div id="login-box" class="login-box visible widget-box no-border">
+                <div class="widget-body">
+                    <div class="widget-main">
+                        <h4 class="header blue lighter bigger">
+                            Alteração de Senha
+                        </h4>
+                        <br/>
+                       <!--  <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right" for="email"> Email </label>
+                        
+                        <div class="col-sm-7">
+
+                           <span class="block input-icon input-icon-right">
+                                <input type="email" class="form-control" placeholder="Email / Telefone" name="email" ng-model="altsenha.email" required focus/>
+                                <i class="ace-icon fa fa-user"></i>
+                            </span>
+                        </div>
+                    </div>-->
+ <form name="signupForm" class="form-horizontal" role="form">
+                           
+                         <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="password">Senha antiga</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="password" minlength="6" class="form-control" name = "password" placeholder="Senha" ng-model="altsenha.password" required/>
+                                <small class="errorMessage" data-ng-show="signupForm.password.$dirty && signupForm.password.$invalid"> Digite a senha.</small>
+                            </span>
+                                </div>
+                            </div>
+                       </br></br>
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="password2">Nova Senha</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="password" minlength="6" class="form-control" name="password2" ng-minlength="6" placeholder="Nova Senha" ng-model="altsenha.password2" required/>
+                                <small class="errorMessage" data-ng-show="signupForm.password2.$dirty && signupForm.password2.$invalid"> Sua senha deve conter 6 dígitos.</small>
+                            </span>
+                                </div>
+                            </div>
+                            </br></br>
+                            
+                               <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="password3">Confirmar Senha</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="password" minlength="6" class="form-control" name="password3" placeholder="Repita a nova Senha" ng-model="altsenha.password3" password-match="altsenha.password2" required/>                                
+                                <small class="errorMessage" data-ng-show="signupForm.password3.$dirty && signupForm.password3.$error.required"> Digite a senha novamente.</small>
+
+                               <small class="errorMessage" data-ng-show="signupForm.password3.$dirty && signupForm.password3.$error.passwordNoMatch && !signupForm.password3.$error.required"> Senha divergente.</small>
+
+                            </span>
+
+                             <input type="hidden" class="form-control" name="email" value="{{email}}" ng-model="altsenha.email"/>
+
+
+                                </div>
+                            </div>
+                           </br></br>
+                            <div class="form-group">
+                                <span class="lbl col-sm-5"> </span>
+                                <div class="col-sm-7">
+                                    <button type="submit" class="width-35 pull-right btn btn-md btn-primary" ng-click="altSenha(altsenha)" data-ng-disabled="signupForm.$invalid">
+                                        Alterar
+                                    </button>
+                                     <div class="space-16">
+                        <Button class="width-35 pull-left btn btn-md btn-primary" ng-click="btndash();">Voltar
+                        </button>
+                                </div>
+                            </div>
+                           
+                          <!-- <div class="space-16">
+                        <Button class="width-20 pull-left btn btn-md btn-primary" ng-click="btndash();">Voltar
+                        </button></div><br/><br/><br/>
+                                </div>-->
+             </fieldset>                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- /.page-content -->

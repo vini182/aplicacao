@@ -1,0 +1,195 @@
+<div class="breadcrumbs" id="breadcrumbs">
+    <ul class="breadcrumb">
+        <li>
+            <a href="#/dashboard">Home</a>
+             
+           <li class="active">Consulta de Pacientes</li>
+         <li class="active">Usuário: {{name}}</li>
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row">
+        <div class="space-6"></div>
+        <div class="col-sm-6 col-sm-offset-1">
+            <div id="login-box" class="login-box visible widget-box no-border">
+                <div class="widget-body">
+                    <div class="widget-main">
+                        <h4 class="header blue lighter bigger">
+                            Consulta de Pacientes
+                        </h4>
+                        <br/>
+                        <form name="signupForm" class="form-horizontal" role="form">
+                           
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="cpf">Selecionar Paciente</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+
+
+            
+                  </div>
+                           </div>
+
+                           
+                             <div class="form-group">
+
+                                <label class="col-sm-5 control-label no-padding-right" for="cpf">CPF</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="text" maxlength="14" minlength="14" ng-minlength="14" focus onkeypress="formatar('###.###.###-##', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;"  class="form-control" placeholder="CPF" ng-model="conspac.cpf" />
+                                 <small class="errorMessage" data-ng-show="signupForm.cpf.$dirty && signupForm.cpf.$invalid"> Digite o CPF.</small>
+                            </span>
+                                </div>
+                            </div>
+
+
+                            <!-- <div class="form-group">
+                                <span class="lbl col-md-5"> </span>
+                                <div class="col-sm-7">
+
+
+                                    <button type="submit" ng-if="conspac.cpf" class="col-sm-10 pull-right btn btn-md btn-primary" ng-click="consPac(conspac)" data-ng-disabled="signupForm.$invalid">Consultar
+                                    </button>
+                
+                                    
+                                        </br></br>
+                                    <button type="submit" ng-if="conspac.nome" class="col-sm-10 center-block btn btn-md btn-danger" ng-click="excPac(conspac)" data-ng-disabled="signupForm.$invalid">
+                                        Excluir
+                                    </button>
+
+                                     <Button ng-if="conspac.nome" class="col-sm-10 pull-left btn btn-md btn-primary" ng-click="btndash();">Voltar
+                                     </button>
+
+                                                                </div>
+                                    </div>
+                    -->
+
+                            <div class="form-group">
+                                <span class="lbl col-md-5"> </span>
+                                <div class="col-sm-7">
+                   
+
+                                    <button ng-if="conspac.cpf" type="submit" class="width-35 pull-right btn btn-md btn-primary" ng-click="consPac(conspac)" data-ng-disabled="signupForm.$invalid">
+                                        Consultar
+                                    </button>
+
+                              
+
+                                    <button ng-if="!conspac3 && conspac.uid == uidcad" type="submit" class="width-35 pull-left btn btn-md btn-danger" ng-click="excPac(conspac)" data-ng-disabled="signupForm.$invalid">
+                                        Excluir
+                                    </button>
+                                    </div>
+
+
+                            
+
+                              <div class="form-group">
+
+                              <label class="col-sm-5 control-label no-padding-right" for="cpf"></br>Relatório de Pacientes:</label>
+                             
+                                <div class="col-sm-6">
+                                    <span class="block input-icon input-icon-right"></br>
+                                    
+
+
+                     <button ng-if= type="submit" class="width-35 pull-left btn btn-md btn-primary" ng-click="consPac2(conspac)"> Gerar
+                                    </button></br></br> </br>
+                                
+                                    </span>
+
+
+                                    <Button class="width-35 pull-left btn btn-md btn-primary" ng-click="btndash();">Voltar
+                                     </button>
+ </div></div>
+
+                            <div class="container">
+    <div class="row">                                        
+        <div class="col-xs-12">
+            <div class="table-responsive">                         
+                <table class="table table-responsive table-striped table-bordered">
+         <thead>
+                        <tr  ng-if="conspac3">
+                          <th>Nome</th>
+                          <th>CPF</th>
+                          <th>Data de Nasc.</th>
+                          <th>Criação</th>
+    
+                        </tr>
+                </thead>
+                    <tbody>
+                        <tr ng-repeat="x in conspac3">
+                          <th>{{x.nome}}</th>
+                          <th ng-model="x.cpf">{{x.cpf}}</th> 
+                          <th>{{x.idade}}</th>
+                    
+                          <th>{{x.created}}</th>
+                        
+                            <th ng-model="x.cpf"><button type="submit" class="width-2 btn btn-xs btn-danger" ng-click="excPac2(x)">
+                                        Excluir </button></th>
+
+                        </tr>
+                    </tbody>
+                  </table>
+                  </div>
+                </div>                                     
+            </div>
+        </div>
+    </div>  
+
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" ng-if="conspac.nome" for="nome">Nome:</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="text" class="form-control" placeholder="Nome" disabled ng-if="conspac.nome" maxlength="45" minglength="3" pattern="[a-z\s]+$" ng-model="conspac.nome" />
+                            </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" ng-if="conspac2.idade" for="Idade">Idade:</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="text" class="form-control" disabled  name="idade" ng-if="conspac2.idade" placeholder="Em anos" ng-model="conspac2.idade"/>
+                            </span>
+                                </div>
+                            </div>
+                         
+                               
+                               <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right"  ng-if="conspac.created" for="created">Cadastrado em:</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="text" class="form-control" name="created" disabled  ng-if="conspac.created" placeholder="Data" ng-model="conspac.created" />
+                            </span> 
+                                </div>
+                            </div>   
+                                <br/>
+
+
+                            
+                                                                    
+                                    </form>
+
+
+                                </div>
+
+                            </div>
+                            </fieldset>
+
+                    </br>
+
+               
+</br>
+
+ </div> </div> 
+
+          
+             
+                           
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- /.page-content -->

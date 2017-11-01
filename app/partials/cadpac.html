@@ -1,0 +1,84 @@
+<div class="breadcrumbs" id="breadcrumbs">
+    <ul class="breadcrumb">
+        <li>
+           
+             <a href="#/dashboard">Home</a>
+        </li>
+        <li class="active">Cadastro de Pacientes</li>
+        <li class="active">Usuário: {{name}}</li>
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row">
+        <div class="space-6"></div>
+        <div class="col-sm-6 col-sm-offset-1">
+            <div id="login-box" class="login-box visible widget-box no-border">
+                <div class="widget-body">
+                    <div class="widget-main">
+                        <h4 class="header blue lighter bigger">
+                            Cadastro de Paciente
+                        </h4>
+                        <br/>
+                        <form name="signupForm" class="form-horizontal" role="form">
+                           
+                             <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="cpf">CPF</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="text" maxlength="14" required minlength="14" focus onkeypress="formatar('###.###.###-##', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;"  class="form-control" ng-minlength="14" placeholder="CPF" ng-model="cadpac.cpf"/>
+
+
+
+
+                            </span>
+                                </div>
+                            </div>
+                           
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="name">Nome</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="text" class="form-control" required  placeholder="Nome" maxlength="45" minglength="3" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode)) && window.event.keyCode != '32') return false;" ng-model="cadpac.nome" />
+                            </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="idade">Data de Nascimento</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="date" class="form-control" required placeholder="Data de Nascimento" name="idade" ng-model="cadpac.idade"/>
+                              
+                            </span>
+                                </div>
+                            </div>
+                           
+
+                            <br/>
+                            <div class="form-group">
+                                <span class="lbl col-sm-5"> </span>
+                                <div class="col-sm-7">
+                   
+                                    <button type="submit" class="width-35 pull-right btn btn-md btn-primary" ng-click="cadPac(cadpac)" data-ng-disabled="signupForm.$invalid">
+                                        Cadastrar
+                                    </button>
+                                 
+                                    <div class="space-16">
+                        <Button class="width-45 pull-left btn btn-md btn-primary" ng-click="btndash();">Voltar
+                        </button></div><br/><br/><br/>
+                                </div>
+																	
+                                    </form>
+                                </div>
+
+                            </div>
+                            </fieldset>
+
+                           
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- /.page-content -->

@@ -1,0 +1,22 @@
+create table pacientes(
+    id int PRIMARY KEY auto_increment,
+    fk_uid int NOT NULL,
+    foreign key(fk_uid) references customers_auth(uid),
+    nome varchar(200) NOT NULL,
+    idade int(3) NOT NULL,
+    CPF varchar(20) NOT NULL);
+
+    
+CREATE TABLE `cuidados` (
+  `id_cuid` int PRIMARY KEY AUTO_INCREMENT,
+  `fk_idusu` int(11) NOT NULL,
+   foreign key(fk_idusu) references pacientes(fk_uid),
+  `fk_idpac` int(11) NOT NULL,
+   foreign key(fk_idpac) references pacientes(id),
+  `temperatura` float DEFAULT NULL,
+  `pressao` varchar(20) DEFAULT NULL,
+  `medicam` varchar(50) DEFAULT NULL,
+  `recom` varchar(120) DEFAULT NULL,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+

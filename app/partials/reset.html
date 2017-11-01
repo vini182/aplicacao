@@ -1,0 +1,72 @@
+<div class="breadcrumbs" id="breadcrumbs">
+    <ul class="breadcrumb">
+        <li>
+            <i class="ace-icon fa fa-home home-icon"></i>
+            <a href="#">Home</a>
+        </li>
+        <li class="active">Reenviar Senha</li>
+    </ul>
+</div>
+<div class="page-content">
+
+<div class="row">
+<div class="space-6"></div>
+<div class="col-sm-10 col-sm-offset-1">
+    <div id="login-box" class="login-box visible widget-box no-border">
+        <div class="widget-body">
+            <div class="widget-main">
+                <h4 class="header blue lighter bigger">
+                    <i class="icon-coffee green"></i>
+                    Reenviar sua Senha
+                </h4>
+
+                <div class="space-16"></div>
+
+                <form name="loginForm" class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right" for="email"> E-mail  </label>
+                        
+                        <div class="col-sm-5">
+                        </br> 
+                           <span class="block input-icon input-icon-right">
+                                <input type="email" class="form-control" placeholder="Digite seu e-mail" name="email" required ng-model="resetsenha.email"  focus/>
+                                <i class="ace-icon fa fa-user"></i>
+                            </span>
+                        </div>
+                    </div>
+                   
+                    </form> 
+                    <div class="space"></div>
+                     <div class="clearfix">
+                                                        <div class="row">
+                         <label class="col-sm-3 control-label no-padding-right"> </label>
+                        <div class="col-sm-5">
+                            <button type="submit" class="width-35 pull-right btn btn-sm btn-primary" ng-click="resetSenha(resetsenha)" data-ng-disabled="loginForm.$invalid">
+                                <i class="ace-icon fa fa-key"></i>
+                                Enviar
+                            </button>
+                                                            </div>
+                        </div>
+                                          <span class="lbl col-sm-4"> </span><div class="col-sm-7">Deseja efetuar login? <a href="#/login">Login</a></div>
+                    </div>
+        
+                
+    
+                
+                
+
+                </div>      
+
+        </form>
+
+                
+                
+            </div><!-- /widget-main -->
+
+            
+        </div><!-- /widget-body -->
+    </div><!-- /login-box -->
+
+</div><!-- /position-relative -->
+</div>
+</div><!-- /.page-content -->

@@ -1,0 +1,99 @@
+<div class="breadcrumbs" id="breadcrumbs">
+    <ul class="breadcrumb">
+        <li>
+            <a href="#">Home</a>
+        </li>
+        <li class="active">Cadastro usuário</li>
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row">
+        <div class="space-6"></div>
+        <div class="col-sm-6 col-sm-offset-1">
+            <div id="login-box" class="login-box visible widget-box no-border">
+                <div class="widget-body">
+                    <div class="widget-main">
+                        <h4 class="header blue lighter bigger">
+                            Cadastro
+                        </h4>
+                        <br/>
+                        <form name="signupForm" class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="email">E-mail</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                        <input type="email" required class="form-control" placeholder="Email" name="email" ng-model="signup.email" focus/>
+                                        <span ng-show="signupForm.email.$error.email" class="help-inline">E-mail não é válido</span> 
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="password">Senha</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="password" class="form-control" name ="password" ng-minlength="6" placeholder="Senha" ng-model="signup.password" required/>
+                                <small class="errorMessage" data-ng-show="signupForm.password.$dirty && signupForm.password.$invalid"> Sua senha deve conter 6 dígitos.</small>
+                            </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="password2">Confirmar Senha</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="password" class="form-control" name="password2" placeholder="Repita a Senha" ng-model="signup.password2" password-match="signup.password" required/>                                
+                                <small class="errorMessage" data-ng-show="signupForm.password2.$dirty  && signupForm.password2.$error.required "> Digite a senha novamente.</small>
+
+                               <small class="errorMessage" data-ng-show="signupForm.password2.$dirty && signupForm.password2.$error.passwordNoMatch && !signupForm.password2.$error.required"> Senha divergente.</small>
+
+                            </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="name">Nome</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="text" class="form-control" name="nome" required placeholder="Nome" ng-model="signup.name" />
+ <small class="errorMessage" data-ng-show="signupForm.name.$dirty && signupForm.name.$invalid"> Digite o Nome.</small>
+
+                            </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="phone">Celular</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="text" maxlength="13" class="form-control"  pattern="[0-9]+$+-+(+)+" ng-maxlength="15"onkeypress="formatar2('## #####-####', this);" required placeholder="Ex: xx xxxxx-xxxx" name="phone" ng-model="signup.phone"/>
+ <small class="errorMessage"  data-ng-show="signupForm.phone.$dirty && signupForm.phone.$invalid"> Digite o Telefone.</small>                            
+</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="address">Endereço</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="text" class="form-control" required placeholder="Endereço" ng-model="signup.address" />
+ <small class="errorMessage" data-ng-show="signupForm.adress.$dirty && signupForm.adress.$invalid"> Digite o Endereço.</small>                           
+  </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <span class="lbl col-sm-5"> </span>
+                                <div class="col-sm-7">
+                                    <button type="submit" class="width-35 pull-right btn btn-sm btn-primary" ng-click="signUp(signup)" data-ng-disabled="signupForm.$invalid">
+                                        Cadastrar
+                                    </button>
+                                </div>
+                            </div>
+                            </fieldset>
+                            <span class="lbl col-sm-5"> </span>
+                            <div class="col-sm-7">Você já possui uma conta? <a href="#/login">Entrar</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- /.page-content -->

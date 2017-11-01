@@ -1,0 +1,120 @@
+<div class="breadcrumbs" id="breadcrumbs">
+    <ul class="breadcrumb">
+        <li>
+            <a href="#">Home</a>
+            /  
+             <a href="#dashboard">Painel de Usuário</a>
+        </li>
+        <li class="active">Consultar Cuidados</li>
+         <li class="active">Usuário: {{name}}</li>
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row">
+        <div class="space-6"></div>
+        <div class="col-sm-6 col-sm-offset-1">
+            <div id="login-box" class="login-box visible widget-box no-border">
+                <div class="widget-body">
+                    <div class="widget-main">
+                        <h4 class="header blue lighter bigger">
+                            Consulta de Cuidados
+                        </h4>
+                        <br/>
+                        <form name="signupForm" class="form-horizontal" role="form">
+                           
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="cpf">Selecionar Paciente</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+
+
+            
+                  </div>
+                           </div>
+                           <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="cpf">CPF</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="text" class="form-control" name="cpf" required ng-model="conscui.cpf"/>
+                            </span>
+                                </div>
+                            </div>
+                        
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="nome">Nome</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="text" class="form-control" name="nome" ng-model="conscui2.nome"/>
+                            </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="temperatura">Temperatura</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="text" class="form-control" name="temperatura" ng-model="conscui.temperatura"/>
+                            </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="pressao">Pressão</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="text" class="form-control" name="pressao" ng-model="conscui.pressao" />
+                            </span>
+                                </div>
+                            </div>
+                             <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="medicam">Medicamento</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="text" class="form-control" name="medicam" ng-model="conscui.medicam" />
+                            </span>
+                                </div>
+                            </div>
+                             <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="recom">Recomendações</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="text" class="form-control" name="recom" ng-model="conscui.recom" />
+                            </span>
+                                </div>
+                            </div>        
+                               <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="recom">Cadastrado em</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="text" class="form-control" name="recom" ng-model="conscui.created" />
+                            </span>
+                                </div>
+                            </div>   
+                                   
+
+                                             <div class="form-group">
+                                <span class="lbl col-sm-5"> </span>
+                                <div class="col-sm-7">
+                   
+                                    <button type="submit" class="width-35 pull-right btn btn-md btn-primary" ng-click="consCui(conscui)" data-ng-disabled="signupForm.$invalid">
+                                        Consultar
+                                    </button>
+                                 
+                                        <div class="space-16">
+                        <Button class="width-45 pull-left btn btn-md btn-primary" ng-click="btndash();">Voltar
+                        </button></div><br/><br/><br/>
+                                </div>
+                                                                    
+                                    </form>
+                                </div>
+
+                            </div>
+                            </fieldset>
+
+                           
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- /.page-content -->

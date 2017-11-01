@@ -1,0 +1,148 @@
+<div class="breadcrumbs" id="breadcrumbs">
+    <ul class="breadcrumb">
+        <li>
+            <a href="#dashboard">Home</a>
+            
+             
+        </li>
+        <li class="active">Relatório de Cuidados</li>
+         <li class="active">Usuário: {{name}}</li>
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row">
+        <div class="space-6">
+            
+            </div>
+            <div class="col-sm-6 col-sm-offset-1">
+                <div id="login-box" class="login-box visible widget-box no-border">
+                    <div class="widget-body">
+                        <div class="widget-main">
+                            <h4 class="header blue lighter bigger">
+                            Relatório de Cuidados
+                            </h4>
+                            <br/>
+                        <form name="signupForm" class="form-horizontal" role="form">
+                           
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="cpf">Selecionar Paciente</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+
+
+            
+                                </div>
+                            </div>
+                                    <div class="form-group">
+                                    <label class="col-sm-5 control-label no-padding-right" for="cpf">CPF</label>
+                                        <div class="col-sm-7">
+                                        <span class="block input-icon input-icon-right">
+                                        <input type="text" maxlength="14" minlength="14"  ng-minlength="14" onkeypress="formatar('###.###.###-##', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" focus class="form-control" placeholder="CPF" ng-model="relat.cpf"/>
+                                        </span>
+                                        </br>
+                  <button type="submit" ng-disabled="!relat.cpf" class="width-35 pull-right btn btn-md btn-primary" ng-click="relaT(relat)" >
+                                        Gerar do Paciente
+                                    </button>
+
+
+                                    <Button class="width-35 pull-left btn btn-md btn-primary" ng-click="relaT2(relat2);">Gerar todos cuidados
+                        </button></br></br></br>
+
+
+                                     <Button class="width-35 pull-left btn btn-md btn-primary" ng-click="btndash();">Voltar
+                        </button>
+
+                            
+                                        </div>                    
+                                    </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                  
+                    </div>
+</br>
+<div class="container">
+    <div class="row">                                        
+        <div class="col-xs-12 col-md-12">
+            <div class="table-responsive">                         
+                <table class="table table-responsive table-striped table-bordered">
+         <thead>
+                        <tr  ng-if="relat1">
+                          <th>Nome </th>
+                          <th>CPF</th>
+                          <th>Pressão </th>
+                          <th>Temperatura </th>
+                          <th>Recomendações </th>
+                          <th>Criação</th>
+                          
+    
+                        </tr>
+                </thead>
+                    <tbody>
+                        <tr ng-repeat="x in relat1">
+                          <th>{{x.nome}}</th>
+                          <th ng-model="x.cpf">{{x.cpf}}</th>
+                          <th>{{x.pressao}}</th>
+                          <th>{{x.temperatura}}</th>
+                          <th>{{x.recom}}</th>
+                           <th>{{x.created}}</th>
+                            <th ng-model="x.id_cuid"><button type="submit" ng-if="x.uid == uidcad" class="width-2 btn btn-xs btn-danger" ng-click="excCui2(x)">
+                                        Excluir </button></th>
+
+                        </tr>
+                    </tbody>
+                  </table>
+
+                </div>                                     
+            </div>
+        </div>
+    </div>      
+
+    <div class="container">
+    <div class="row">                                        
+        <div class="col-xs-12 col-md-12">
+            <div class="table-responsive">                         
+                <table class="table table-responsive table-striped table-bordered">
+         <thead>
+                        <tr  ng-if="relat2">
+                          <th>Nome </th>
+                          <th>CPF</th>
+                          <th>Pressão </th>
+                          <th>Temperatura </th>
+                          <th>Recomendações </th>
+                          <th>Criação</th>
+                          
+    
+                        </tr>
+                </thead>
+                    <tbody>
+                        <tr ng-repeat="y in relat2">
+                          <th>{{y.nome}}</th>
+                          <th>{{y.cpf}}</th>
+                          <th>{{y.pressao}}</th>
+                          <th>{{y.temperatura}}</th>
+                          <th>{{y.recom}}</th>
+                           <th>{{y.created}}</th>
+                            <th ng-model="y.id_cuid"><button type="submit" ng-if="y.uid == uidcad" class="width-2 btn btn-xs btn-danger" ng-click="excCui3(y)">
+                                        Excluir </button></th>
+
+                        </tr>
+                    </tbody>
+                  </table>
+
+                </div>                                     
+            </div>
+        </div>
+    </div>                  
+                 
+                           
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- /.page-content -->
